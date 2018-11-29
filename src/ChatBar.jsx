@@ -14,10 +14,10 @@ class ChatBar extends Component {
       }
     }
   }
+
   render() {
     return (
       <footer className="chatbar">
-
         <input onKeyPress={this.handleKeyPress('userName')} className="chatbar-username" placeholder={this.props.userName} />
         <input onKeyPress={this.handleKeyPress('message')} className="chatbar-message" placeholder="Type a message and hit ENTER" />
 
@@ -26,3 +26,6 @@ class ChatBar extends Component {
   }
 }
 export default ChatBar;
+
+
+  // onBlur if doesn't = ""; 

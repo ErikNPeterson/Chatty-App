@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 
 class Message extends Component {
   render() {
-    return (
+    console.log(this.props.message);
+    if (this.props.message.type === 'incomingMessage') {
+      return (
+        <div className="message">
+          <span className="message-username">{this.props.message.username}</span>
+          <span className="message-content">{this.props.message.content}</span>
+        </div>
+      );
+    } else if (this.props.message.type === 'incomingNotification') {
+      return (
+        <div className="message system">{this.props.message.oldName} changed their name to {this.props.message.newName}</div>
+      )
 
-      <div className="message">
-        <span className="message-username">{this.props.username}</span>
-        <span className="message-content">{this.props.content}</span>
-      </div>
-    );
+    }
+
   }
 }
 export default Message;
 
-{/* <div className="message system">
-Anonymous1 changed their name to nomnom.
-</div> */}
+{ }
