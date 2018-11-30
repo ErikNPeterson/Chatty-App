@@ -1,4 +1,4 @@
-React Boilerplate
+Chatty App (React App)
 =====================
 
 A minimal and light dev environment for ReactJS.
@@ -43,3 +43,16 @@ npm run lint
 * Webpack
 * [babel-loader](https://github.com/babel/babel-loader)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+* Babel-core
+* Babel-preset-es2015
+* Babel-preset-react
+* Babel-preset-stage-0
+* Eslint
+* Eslint-plugin-react
+* Css-loader
+* Node-sass
+* Sass-loader
+* Sockjs-client
+* Style-loader
+* React
+* React-dom
