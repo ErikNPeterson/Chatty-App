@@ -26,6 +26,3 @@ class ChatBar extends Component {
   }
 }
 export default ChatBar;
-
-
-  // onBlur if doesn't = ""; 

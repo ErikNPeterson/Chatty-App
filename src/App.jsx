@@ -14,11 +14,9 @@ class App extends Component {
       amountOfUsers: 0,
       userColor: 'black'
     }
-    //NOt needed after applying arrow functions
-    // this.createMessage = this.createMessage.bind(this)
+
   }
 
-  // THIS DEFINITELY HAS PROBLEMS
   newUser = userName => {
     const oldName = this.state.currentUser.name;
     this.setState({ currentUser: { name: userName } });
@@ -29,7 +27,6 @@ class App extends Component {
   createMessage = content => {
     const newMessage = { type: "postMessage", username: this.state.currentUser.name, content: content, color: this.state.userColor };
     console.log(newMessage);
-    // sending our message to the server.
     this.exampleSocket.send(JSON.stringify(newMessage));
   }
 
@@ -57,7 +54,6 @@ class App extends Component {
             this.setState({ messages: messages });
             break;
           default:
-            // show an error in the console if the message type is unknown
             throw new Error("Unknown event type " + data.type);
         }
       }

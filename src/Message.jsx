@@ -15,11 +15,8 @@ class Message extends Component {
       return (
         <div className="message system">{this.props.message.oldName} changed their name to {this.props.message.newName}</div>
       )
-
     }
-
   }
+
 }
 export default Message;
-
-{ }
