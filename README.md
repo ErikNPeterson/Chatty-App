@@ -6,12 +6,15 @@ ChatPage (formerly Chatty) will allow users to communicate with each other witho
 ChatPage has real-time functionality where the user does not have to reload the page in order to see updates. Each user is assigned a random colour for their username when connected to the server. When a user changes their name other users are notified and the colour for their name will remain the same.
 
 
-### Home Page
+## Home Page
 !['home page'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyEmpty.png)
-### Conversation
+
+## Conversation
 !['Conversation'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyConversation.png)
-### Name Change Notifications with Persistent Colour!
+
+## Name Change Notifications with Persistent Colour!
 !['Name in Colour/ Notifications'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyColourName.png)
+
 
 
 ### Usage
