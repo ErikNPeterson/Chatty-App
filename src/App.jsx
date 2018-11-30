@@ -11,11 +11,11 @@ class App extends Component {
     this.state = {
       currentUser: { name: "DefaultUser" },
       messages: [],
-      amountOfUsers: 0
+      amountOfUsers: 0,
+      userColor: 'black'
     }
     //NOt needed after applying arrow functions
-    // this.createMessage = this.createMessage.bind(this);
-    // this.newUser = this.newUser.bind(this);
+    // this.createMessage = this.createMessage.bind(this)
   }
 
   // THIS DEFINITELY HAS PROBLEMS
@@ -27,7 +27,8 @@ class App extends Component {
   }
 
   createMessage = content => {
-    const newMessage = { type: "postMessage", username: this.state.currentUser.name, content: content };
+    const newMessage = { type: "postMessage", username: this.state.currentUser.name, content: content, color: this.state.userColor };
+    console.log(newMessage);
     // sending our message to the server.
     this.exampleSocket.send(JSON.stringify(newMessage));
   }
@@ -37,12 +38,14 @@ class App extends Component {
     this.exampleSocket = new WebSocket("ws://localhost:3001");
 
     this.exampleSocket.onmessage = (event) => {
-      console.log('THIS IS THE EVENT', event);
 
       const data = JSON.parse(event.data);
 
       if (data.type === 'incomingUserUpdate') {
         this.setState({ amountOfUsers: data.amount });
+      } else if (data.type === 'color') {
+        this.setState({ userColor: data.color });
+        console.log(this.state.userColor)
       } else {
 
         const messages = this.state.messages.concat(JSON.parse(event.data));
@@ -59,7 +62,6 @@ class App extends Component {
         }
       }
     }
-
   }
 
   render() {

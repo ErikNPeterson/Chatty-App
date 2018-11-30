@@ -19,9 +19,24 @@ const wss = new SocketServer({
   server
 });
 
+function generateColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
+
+  const userColor = {};
+  userColor.id = uuidv1();
+  userColor.type = 'color';
+  userColor.color = generateColor();
+  ws.send(JSON.stringify(userColor));
+
   // consider figuring out how to wrap this.
   const users = {};
   users.id = uuidv1();
@@ -32,7 +47,7 @@ wss.on('connection', (ws) => {
   ws.on('message', function incoming(data) {
     let message = JSON.parse(data);
     message.id = uuidv1();
-
+    console.log(data);
     if (message.type === 'postMessage') {
       message.type = 'incomingMessage'
     } else if (message.type === 'postNotification') {
