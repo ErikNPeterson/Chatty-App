@@ -1,11 +1,20 @@
-Chatty App (React App)
+ChatPage (React App)
 =====================
 
-A minimal and light dev environment for ReactJS.
+ChatPage (formerly Chatty) will allow users to communicate with each other without having to register accounts. ChatPage uses the React front-end library created and used heavily by Facebook as well as modern tools for Node including Webpack and Babel.
+
+ChatPage has real-time functionality where the user does not have to reload the page in order to see updates. Each user is assigned a random colour for their username when connected to the server. When a user changes their name other users are notified and the colour for their name will remain the same.
+
+
+### Home Page
+!['home page'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyEmpty.png)
+### Conversation
+!['Conversation'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyConversation.png)
+### Name Change Notifications with Persistent Colour!
+!['Name in Colour/ Notifications'](https://github.com/ErikNPeterson/Chatty-App/blob/master/docs/chattyColourName.png)
+
 
 ### Usage
-
-Clone the boilerplate and create your own git repo.
 
 ```
 git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
